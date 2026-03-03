@@ -23,6 +23,7 @@ curl -X GET 'https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/in
 
 <details>
 <summary>json格式的参数</summary>
+
 ```json
 {
   "avatar_list_type": "1",
@@ -47,6 +48,7 @@ tips:这里只写必要请求头
 
 <details>
 <summary>json格式的请求头</summary>
+
 ```json
 {
   "User-Agent": "Mozilla/5.0 (Linux; Android 12; 2211133C Build/V417IR; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/110.0.5481.154 Safari/537.36 miHoYoBBS/2.102.1",
