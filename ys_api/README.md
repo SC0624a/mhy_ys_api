@@ -2927,6 +2927,7 @@ curl -X GET 'https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/in
   }
 }
 ```
+</details>
 
 # 全部角色获取
 
