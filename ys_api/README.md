@@ -2928,4 +2928,1527 @@ curl -X GET 'https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/in
 }
 ```
 
-# 
+# 全部角色获取
+
+<details>
+<summary>CURL</summary>
+
+```curl
+curl -X POST 'https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/character/list' -H 'User-Agent: Mozilla/5.0 (Linux; Android 12; 2211133C Build/V417IR; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/110.0.5481.154 Safari/537.36 miHoYoBBS/2.102.1' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Encoding: gzip, deflate' -H 'DS: 1772521319,101954,f0a13cd9787475e112675b18691a5f12' -H 'x-rpc-app_version: 2.102.1' -H 'x-rpc-tool_verison: v6.4.0-gr-cn' -H 'Content-Type: application/json;charset=UTF-8' -H 'x-rpc-device_id: 40818f2a-2395-38df-ab11-93371b77324e' -H 'x-rpc-device_name: Xiaomi%202211133C' -H 'x-rpc-page: v6.4.0-gr-cn_#/ys/role/all' -H 'x-rpc-device_fp: 38d816239aab3' -H 'x-rpc-sys_version: 12' -H 'x-rpc-client_type: 5' -H 'Origin: https://webstatic.mihoyo.com' -H 'X-Requested-With: com.mihoyo.hyperion' -H 'Sec-Fetch-Site: same-site' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Dest: empty' -H 'Referer: https://webstatic.mihoyo.com/' -H 'Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7' -H 'Cookie: XXXX' -d '{"server":"cn_gf01","role_id":"XXXX","sort_type":1}'
+```
+</details>
+
+**请求方式：POST**
+
+> 链接：`https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/character/list`
+
+请求体：
+| 字段 | 类型 | 内容 | 备注 |
+| ---- | ---- | ---- | ---- |
+| sort_type | int | 1 | 未知 |
+| server | str | cn_gf01 | 服务器 |
+| role_id | int | ~ | 角色id |
+
+<details>
+<summary>json格式的请求体</summary>
+
+```json
+{"server":"cn_gf01","role_id":"XXX","sort_type":1}
+```
+</details>
+
+**请求头**
+
+> tips:这里只写必要请求头
+
+| 字段 | 类型 | 内容 | 是否必填 |
+| ---- | ---- | ---- | ---- |
+| User-Agent | str | miHoYoBBS/2.102.1 | 是 |
+| x-rpc-device_id | str | 40818f2a-2395-38df-ab11-93371b77324e | x-rpc-device_fp二选一 |
+| x-rpc-device_fp | str | 38d816239aab3 | x-rpc-device_id二选一 |
+| Origin | str | https://webstatic.mihoyo.com | 是 |
+| Referer | str | https://webstatic.mihoyo.com/ | 是 |
+| Cookie | str | account_mid_v2 | 是 |
+| Cookie | str | cookie_token_v2 | 是 |
+
+<details>
+<summary>json格式的请求头</summary>
+
+```json
+{
+  "User-Agent": "Mozilla/5.0 (Linux; Android 12; 2211133C Build/V417IR; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/110.0.5481.154 Safari/537.36 miHoYoBBS/2.102.1",
+  "x-rpc-device_fp": "38d816239aab3",
+  "Origin": "https://webstatic.mihoyo.com",
+  "Referer": "https://webstatic.mihoyo.com/",
+  "Cookie": "cookie_token_v2=XX;account_mid_v2=XX"
+}
+```
+</details>
+
+**响应体**
+
+> tips：这里只留返回示例，不对返回进行拆解
+
+<details>
+<summary>json格式的响应体</summary>
+
+```json
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "list": [
+      {
+        "id": 10000052,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/23aa979c8e86b7006a62039b9dd81c5b.png",
+        "name": "雷电将军",
+        "element": "Electro",
+        "fetter": 10,
+        "level": 90,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/c3b756f915148bf843c835251fdf8175.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/ecc17cb83ca92fc24f7a39d7605364e3.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13415,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/643071ffc7526446b48101f159ee0437.png",
+          "type": 13,
+          "rarity": 4,
+          "level": 80,
+          "affix_level": 5,
+          "name": "「渔获」"
+        }
+      },
+      {
+        "id": 10000030,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9dcda1d9e45a4f9e59266480ee2fc0c8.png",
+        "name": "钟离",
+        "element": "Geo",
+        "fetter": 10,
+        "level": 90,
+        "rarity": 5,
+        "actived_constellation_num": 2,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/832a2ae9dc2d28fdfa666274840d1247.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/cf93186ac38ea6cc0b2f6beec7a74813.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13303,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/badaa063427a6e3f39d9c031b3dddc24.png",
+          "type": 13,
+          "rarity": 3,
+          "level": 60,
+          "affix_level": 5,
+          "name": "黑缨枪"
+        }
+      },
+      {
+        "id": 10000032,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/41a97aae8bf579ce350a90bbddc59fdf.png",
+        "name": "班尼特",
+        "element": "Pyro",
+        "fetter": 10,
+        "level": 90,
+        "rarity": 4,
+        "actived_constellation_num": 5,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/d1c2339492d4812908c61e1c9579dfd8.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/455ee1e4da29c15282faba8243bccdcc.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11501,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2e40de313b0b488549fde96e553e7fcf.png",
+          "type": 1,
+          "rarity": 5,
+          "level": 80,
+          "affix_level": 2,
+          "name": "风鹰剑"
+        }
+      },
+      {
+        "id": 10000026,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6dca29648877d9140b67d5ccc3db662e.png",
+        "name": "魈",
+        "element": "Anemo",
+        "fetter": 6,
+        "level": 70,
+        "rarity": 5,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/bf55352860f5b3108eb48c465fccde16.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/3e0dcded148a669083fab4d52f82c831.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13406,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1117bae36b42e7ace47a411cb4b04ca1.png",
+          "type": 13,
+          "rarity": 4,
+          "level": 50,
+          "affix_level": 1,
+          "name": "千岩长枪"
+        }
+      },
+      {
+        "id": 10000005,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/static/player/UI_AvatarIcon_PlayerBoy.png",
+        "name": "旅行者",
+        "element": "Pyro",
+        "fetter": 0,
+        "level": 70,
+        "rarity": 5,
+        "actived_constellation_num": 6,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/5b215c3fb522b2845905ce5c0c589a19.png",
+        "is_chosen": false,
+        "side_icon": "https://webstatic.mihoyo.com/upload/static-resource/2023/06/15/7f6d24a0876515fb2be301e283571304_7649038398754126009.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11303,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6b735c4a2cc309a44c5c682f81364261.png",
+          "type": 1,
+          "rarity": 3,
+          "level": 50,
+          "affix_level": 1,
+          "name": "旅行剑"
+        }
+      },
+      {
+        "id": 10000125,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/6966dc8c/3e648c232fb84bea351096c3f2129489.png",
+        "name": "哥伦比娅",
+        "element": "Hydro",
+        "fetter": 1,
+        "level": 60,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/27f7394e8eeae7eb31a2444c5e5caddf.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/6966dceb/6a05d2352e225e42e07f423bbafe7833.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14509,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5df4b80100a07922792ac85362ee6af8.png",
+          "type": 10,
+          "rarity": 5,
+          "level": 50,
+          "affix_level": 1,
+          "name": "神乐之真意"
+        }
+      },
+      {
+        "id": 10000035,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2825ff5127afc078dd1bd3e1b2e39996.png",
+        "name": "七七",
+        "element": "Cryo",
+        "fetter": 4,
+        "level": 60,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/3a92a219f25c707f3acb2f3dac2d5ffd.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/fa562739ce3ca2fd49ca3aa15415392a.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11302,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/048119e09a837be4c1a735fd046e3261.png",
+          "type": 1,
+          "rarity": 3,
+          "level": 20,
+          "affix_level": 5,
+          "name": "黎明神剑"
+        }
+      },
+      {
+        "id": 10000033,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e23dde6e455a2dc62dcebbf2d41f7f72.png",
+        "name": "达达利亚",
+        "element": "Hydro",
+        "fetter": 4,
+        "level": 60,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/7b84f34f84e0f9348a20d52a86920d41.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/34531047e67ab5d6c27646d7e0973ed1.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15405,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6b682afb95373317a4a965b8974b5d08.png",
+          "type": 12,
+          "rarity": 4,
+          "level": 70,
+          "affix_level": 2,
+          "name": "弓藏"
+        }
+      },
+      {
+        "id": 10000025,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/699e3449/cf352253ba22524007154d6d6fc66b55.png",
+        "name": "行秋",
+        "element": "Hydro",
+        "fetter": 8,
+        "level": 60,
+        "rarity": 4,
+        "actived_constellation_num": 4,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/86d17ffd272051cdca2527ec47ad5f35.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/0c63018b6beced753116e3d7c9447188.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11403,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8d40dcb0e8e25ad6c5940095fa6984ab.png",
+          "type": 1,
+          "rarity": 4,
+          "level": 1,
+          "affix_level": 1,
+          "name": "祭礼剑"
+        }
+      },
+      {
+        "id": 10000023,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c836c2dc7d71fe8065ae2798d360167b.png",
+        "name": "香菱",
+        "element": "Pyro",
+        "fetter": 7,
+        "level": 60,
+        "rarity": 4,
+        "actived_constellation_num": 6,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/9958d58bde859327052bab638b0003d9.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/b5d779f06e660962dff9009eb58a90f8.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13407,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7db45b7a84bb80468aaf0f5f430e9bdc.png",
+          "type": 13,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "西风长枪"
+        }
+      },
+      {
+        "id": 10000015,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/699e3449/c1d2a8e0948af4942feb5d086500528b.png",
+        "name": "凯亚",
+        "element": "Cryo",
+        "fetter": 2,
+        "level": 60,
+        "rarity": 4,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/bb950d15a14b528e4275f52486339ff8.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/2781c4fee00e263195f4c1f8cc7aa337.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11402,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e72bdcaaeb4b0a1ea13cfb76c88aa4cb.png",
+          "type": 1,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "笛剑"
+        }
+      },
+      {
+        "id": 10000047,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7d56eb845d4f982757a942a97f88b958.png",
+        "name": "枫原万叶",
+        "element": "Anemo",
+        "fetter": 9,
+        "level": 50,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/26ea3d4cecb403fc5368b9a24dc03ecd.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/cba1d6c6811a1e599725d8f24b6b7458.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11422,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/74ef003a497f24a85e4e1e0af0793530.png",
+          "type": 1,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "东花坊时雨"
+        }
+      },
+      {
+        "id": 10000065,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/caa2e14875915abee78b186b61fd8f3a.png",
+        "name": "久岐忍",
+        "element": "Electro",
+        "fetter": 1,
+        "level": 50,
+        "rarity": 4,
+        "actived_constellation_num": 6,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/e569300674cb9899ed4670e826c15043.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/4e729aba062b54ac30a6351664e19ff1.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11406,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d859d175bb85b6add3dc3df1fb8abc5a.png",
+          "type": 1,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "试作斩岩"
+        }
+      },
+      {
+        "id": 10000034,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1eb5023b8ca517a5fe27316b3771a191.png",
+        "name": "诺艾尔",
+        "element": "Geo",
+        "fetter": 2,
+        "level": 50,
+        "rarity": 4,
+        "actived_constellation_num": 6,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/7aca4472b525f6a6f88024510b04ff51.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/a61ccec5064fe90c87ed3257bc194b19.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12407,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b014e2aa23e856e0cf3f802584b26862.png",
+          "type": 11,
+          "rarity": 4,
+          "level": 60,
+          "affix_level": 1,
+          "name": "白影剑"
+        }
+      },
+      {
+        "id": 10000027,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/699e3449/3ae1f1d40773cd13d361e329a7efd887.png",
+        "name": "凝光",
+        "element": "Geo",
+        "fetter": 1,
+        "level": 50,
+        "rarity": 4,
+        "actived_constellation_num": 6,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/d200947a8ca1886e5b3311225b4918f1.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/66f8c282f99f623c9aedad6851367397.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14409,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/811ff594eebe6cc05f12e02662803239.png",
+          "type": 10,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 2,
+          "name": "昭心"
+        }
+      },
+      {
+        "id": 10000021,
+        "icon": "https://uploadstatic.mihoyo.com/hk4e/e20200928calculate/common/ambor_48e38b5882f6f03c35aa39aa34c4736b.png",
+        "name": "安柏",
+        "element": "Pyro",
+        "fetter": 2,
+        "level": 50,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/2779686571b96e4b4a9993136379f692.png",
+        "is_chosen": false,
+        "side_icon": "https://fastcdn.mihoyo.com/static-resource-v2/2023/12/14/a273217a806ee130b0c0f51bc5542483_2404530785826539052.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15401,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f0b8edcc330cd9de1dcf97eccb20cbaf.png",
+          "type": 12,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 4,
+          "name": "西风猎弓"
+        }
+      },
+      {
+        "id": 10000014,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f55430aba2d84b36d64136958c58c93a.png",
+        "name": "芭芭拉",
+        "element": "Hydro",
+        "fetter": 3,
+        "level": 50,
+        "rarity": 4,
+        "actived_constellation_num": 5,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/936c9bf53f1888bd930c43e33a9dc041.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/a3c31e121de86652d1ff2cfd717b60fd.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14501,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d3f398d9ee417e931b1e273242dd8008.png",
+          "type": 10,
+          "rarity": 5,
+          "level": 1,
+          "affix_level": 1,
+          "name": "天空之卷"
+        }
+      },
+      {
+        "id": 10000089,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0a024f0f2e06e99d67f112cd12eef4af.png",
+        "name": "芙宁娜",
+        "element": "Hydro",
+        "fetter": 2,
+        "level": 40,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/58caba691327772ae49b7b008f1802d4.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/1111b471573254806ab26b00445c887c.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0b590e80914fdb8e348323fff888be0c.png",
+          "type": 1,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "无锋剑"
+        }
+      },
+      {
+        "id": 10000079,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e7beb9e36337d7f64139ee0c97d1a93a.png",
+        "name": "迪希雅",
+        "element": "Pyro",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 5,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/c700870019c97c84e640ea51387f2b19.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/62f2e8efde668b7e5faa0fb1dc173ae6.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b1e284917f1ca8330ba929ef8f116aba.png",
+          "type": 11,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "训练大剑"
+        }
+      },
+      {
+        "id": 10000069,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2747d92218297b5094d4b8fe6d5f6475.png",
+        "name": "提纳里",
+        "element": "Dendro",
+        "fetter": 2,
+        "level": 40,
+        "rarity": 5,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/ee11fd3c6c84958fd90ff6ba85001460.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/9bbe29f8328d15e49f8e4aaab46bed5e.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15403,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4a03625fdbc739dca379573871a4c2ca.png",
+          "type": 12,
+          "rarity": 4,
+          "level": 50,
+          "affix_level": 1,
+          "name": "祭礼弓"
+        }
+      },
+      {
+        "id": 10000060,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/e76d6bdb8f4aeea019df7856ef9eca3f.png",
+        "name": "夜兰",
+        "element": "Hydro",
+        "fetter": 2,
+        "level": 40,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/9f98e730e2d288250a2ba7ccc9f51756.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/3d8e3a00e4222b8884c20e376877dddd.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15402,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/da3d5e7bbc112c4e1378de554a79c6c3.png",
+          "type": 12,
+          "rarity": 4,
+          "level": 70,
+          "affix_level": 1,
+          "name": "绝弦"
+        }
+      },
+      {
+        "id": 10000042,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/89d47da9c1ed3ade59b3c9f7fd00f1e8.png",
+        "name": "刻晴",
+        "element": "Electro",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 5,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/e93402cd5088ae56d51de8bcc4e1d5d9.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/d12210590f6ba921bc3dc2a573c2f387.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11405,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/85dbd526e5a6d0f20af4d0253be63ac0.png",
+          "type": 1,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 2,
+          "name": "匣里龙吟"
+        }
+      },
+      {
+        "id": 10000041,
+        "icon": "https://uploadstatic.mihoyo.com/hk4e/e20200928calculate/common/mona_8aa370eb786178163aeac539e2776ca3.png",
+        "name": "莫娜",
+        "element": "Hydro",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 5,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/ef3318d9d27494a23f012bc6517dc91e.png",
+        "is_chosen": false,
+        "side_icon": "https://fastcdn.mihoyo.com/static-resource-v2/2023/12/14/0e7ededb3585dc109e409e2213c21fe2_7600023040076112955.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/852d232e46ddaacdfcb86b3f53413405.png",
+          "type": 10,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "学徒笔记"
+        }
+      },
+      {
+        "id": 10000003,
+        "icon": "https://uploadstatic.mihoyo.com/hk4e/e20200928calculate/common/qin_a66a25719b062d5e0f8a7271649a6be9.png",
+        "name": "琴",
+        "element": "Anemo",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/909badef56b2f351ec9c9f01bb4bbc81.png",
+        "is_chosen": false,
+        "side_icon": "https://fastcdn.mihoyo.com/static-resource-v2/2023/12/14/765bfdef7f70dffdb80d789817f60ffb_7349415683405267997.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11302,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/048119e09a837be4c1a735fd046e3261.png",
+          "type": 1,
+          "rarity": 3,
+          "level": 20,
+          "affix_level": 5,
+          "name": "黎明神剑"
+        }
+      },
+      {
+        "id": 10000076,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/58a03d4cded3b6e93af3cc3efb708031.png",
+        "name": "珐露珊",
+        "element": "Anemo",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 5,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/20b3c2297a405f88513cee20de705986.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/efda18cb3e43ffbbb8355b54417f05b6.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c75ade4a5acb5eb9aaefbed318bf75ff.png",
+          "type": 12,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "猎弓"
+        }
+      },
+      {
+        "id": 10000074,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/523506069469ad5f09b79daf6ed3a285.png",
+        "name": "莱依拉",
+        "element": "Cryo",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/7f6d246705ba2a1fd1f4b137d5c92a16.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/dd8bc4f0aaa4688582f2df8e02fe7d5d.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11403,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8d40dcb0e8e25ad6c5940095fa6984ab.png",
+          "type": 1,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "祭礼剑"
+        }
+      },
+      {
+        "id": 10000072,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/9ef120c399afbf7f136034b68d721d44.png",
+        "name": "坎蒂丝",
+        "element": "Hydro",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/382344dc8c318305283031611f53412c.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/7e050106377d0f3946fe28b681dc5da4.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13303,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/badaa063427a6e3f39d9c031b3dddc24.png",
+          "type": 13,
+          "rarity": 3,
+          "level": 1,
+          "affix_level": 1,
+          "name": "黑缨枪"
+        }
+      },
+      {
+        "id": 10000068,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d4892796ad70d139c13a6e42d170b877.png",
+        "name": "多莉",
+        "element": "Electro",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 2,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/ce6448d7d2bf3dc034ad698fa60917ef.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/6ad4b9ea1bc906f7ba8fb547ba3215c6.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12405,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/de1e307e1104fbf7c8f7a7ef5cb143e1.png",
+          "type": 11,
+          "rarity": 4,
+          "level": 1,
+          "affix_level": 2,
+          "name": "雨裁"
+        }
+      },
+      {
+        "id": 10000064,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/45fc56fa83f5447d6a61677f514a9131.png",
+        "name": "云堇",
+        "element": "Geo",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 3,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/e410b63ff1e7e75b6885573509f29b8e.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/8ae1c762015220916b8ae9da0705a133.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13403,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b96753e95648a2ddf2ece0cdcd12b758.png",
+          "type": 13,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "流月针"
+        }
+      },
+      {
+        "id": 10000059,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c4d144d578bf42c6f03ac240a3bf2c3c.png",
+        "name": "鹿野院平藏",
+        "element": "Anemo",
+        "fetter": 2,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 4,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/fb2e6bafd48ee948080feafb368fed79.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/564bcd0543848e0d208b492f0ed4e999.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14409,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/811ff594eebe6cc05f12e02662803239.png",
+          "type": 10,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 2,
+          "name": "昭心"
+        }
+      },
+      {
+        "id": 10000055,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a3a8da43e8c4d76986237ab784e49070.png",
+        "name": "五郎",
+        "element": "Geo",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/bf916ae0f5a292ef46a279bce7ae66ac.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/4da651801389b89fd68d6e2d873f646b.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15419,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/6e37803f70f76be9df083b99a5af8307.png",
+          "type": 12,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 5,
+          "name": "鹮穿之喙"
+        }
+      },
+      {
+        "id": 10000053,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1791a03bc18b12a8030a4e16df2ea5f6.png",
+        "name": "早柚",
+        "element": "Anemo",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 6,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/8ec174eeff413551afbb7974d4a8f3c4.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/bb21a39564805055edf92b88cbed4acb.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12306,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/8b59cc85afa53362080a7682e0b2284c.png",
+          "type": 11,
+          "rarity": 3,
+          "level": 20,
+          "affix_level": 1,
+          "name": "飞天大御剑"
+        }
+      },
+      {
+        "id": 10000044,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/699e3449/b3085c5955360785fc5a1c25ab1a15f4.png",
+        "name": "辛焱",
+        "element": "Pyro",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/06875a6a45f98628eac5c8056fdb51b2.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/4bd8a9ca7b168bc417236c3e3e508aba.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12401,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7646388f158d62d56f368631a37427c3.png",
+          "type": 11,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "西风大剑"
+        }
+      },
+      {
+        "id": 10000043,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/27ee1aba588f3e8e42800249fe1047e8.png",
+        "name": "砂糖",
+        "element": "Anemo",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/d6cfdc6183ec1465fef3261baeba31f0.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/9bc7734e2c50399b56e3ad152d71d159.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14304,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a46be1d86331fa7075c0a968505857d7.png",
+          "type": 10,
+          "rarity": 3,
+          "level": 20,
+          "affix_level": 5,
+          "name": "翡玉法球"
+        }
+      },
+      {
+        "id": 10000036,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/38b5bd856ea9fff842477a77265da49b.png",
+        "name": "重云",
+        "element": "Cryo",
+        "fetter": 2,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/d8cb92b3a21a45ac20173a276d305656.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/db95c5527a3b0f1a59743180e531be63.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12403,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b79312ddc86e05133b8a8d984f9931e1.png",
+          "type": 11,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "祭礼大剑"
+        }
+      },
+      {
+        "id": 10000020,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0a8a2c7373dcc8f2549b645d0c3374b7.png",
+        "name": "雷泽",
+        "element": "Electro",
+        "fetter": 1,
+        "level": 40,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/7f5bb79a8d2626d4fe9866577dba0fa4.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/d805cb25bd31bf5863b75a182a58aaad.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12402,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d7f9ca521e414f63dfe24876b91cc139.png",
+          "type": 11,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "钟剑"
+        }
+      },
+      {
+        "id": 10000048,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/699e3449/9d2730b17e4cfdc85b52b163948a8c12.png",
+        "name": "烟绯",
+        "element": "Pyro",
+        "fetter": 1,
+        "level": 33,
+        "rarity": 4,
+        "actived_constellation_num": 2,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/f285fb42416942ec71797e5bb14c0a22.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/bde023cad87795c72e0dee19d5461f26.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14401,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bb4ff947d3649e393b6ca2e117b072d6.png",
+          "type": 10,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 2,
+          "name": "西风秘典"
+        }
+      },
+      {
+        "id": 10000045,
+        "icon": "https://uploadstatic.mihoyo.com/hk4e/e20200928calculate/common/rosaria_623de3bc25a21b6e516ea0489ddd11f8.png",
+        "name": "罗莎莉亚",
+        "element": "Cryo",
+        "fetter": 1,
+        "level": 30,
+        "rarity": 4,
+        "actived_constellation_num": 2,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/1e36f82f68276f97b62e2fbe798ecdc4.png",
+        "is_chosen": false,
+        "side_icon": "https://fastcdn.mihoyo.com/static-resource-v2/2023/12/14/3e370a7bf47e75e36313d2da8cf1dfb6_434876880352973489.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13419,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0ea3522df5405f90d90505f5e36c2008.png",
+          "type": 13,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 5,
+          "name": "风信之锋"
+        }
+      },
+      {
+        "id": 10000118,
+        "icon": "https://fastcdn.mihoyo.com/static-resource-v2/2025/10/16/7328f006a498626b32a1e187c0dba1ea_3540908881493819725.png",
+        "name": "奇偶·女性",
+        "element": "Pyro",
+        "fetter": 0,
+        "level": 20,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/cf31bb5bd03ef7b2b7e48d13bc14600f.png",
+        "is_chosen": false,
+        "side_icon": "https://fastcdn.mihoyo.com/static-resource-v2/2025/10/16/96df141f7d4d44b153a5af52420fd1ce_5783188633499201918.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0b590e80914fdb8e348323fff888be0c.png",
+          "type": 1,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "无锋剑"
+        }
+      },
+      {
+        "id": 10000117,
+        "icon": "https://fastcdn.mihoyo.com/static-resource-v2/2025/10/16/af27ded694227c5c49f0f75730eecbb9_8978606435920695541.png",
+        "name": "奇偶·男性",
+        "element": "Pyro",
+        "fetter": 0,
+        "level": 20,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/8adbb56a7dcc47232295a1e568da0ed3.png",
+        "is_chosen": false,
+        "side_icon": "https://fastcdn.mihoyo.com/static-resource-v2/2025/10/16/d926ba69ae198f3f85bda32257a0a2a3_6965405552643353185.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0b590e80914fdb8e348323fff888be0c.png",
+          "type": 1,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "无锋剑"
+        }
+      },
+      {
+        "id": 10000109,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1cebf43ac944ad3ff2a0581bebe309d8.png",
+        "name": "梦见月瑞希",
+        "element": "Anemo",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/782c43fb80b91b9633f797c89940f3c1.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/cc0940bba3cbd136124438cbb113f457.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/852d232e46ddaacdfcb86b3f53413405.png",
+          "type": 10,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "学徒笔记"
+        }
+      },
+      {
+        "id": 10000107,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/abe2da348abe64c67d9c2763d2d8c4e7.png",
+        "name": "茜特菈莉",
+        "element": "Cryo",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/bddc9c00c09e9adb9a8d780d655aa5b9.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/59c16c70d2cfc9e939a7835dff00be7e.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/852d232e46ddaacdfcb86b3f53413405.png",
+          "type": 10,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "学徒笔记"
+        }
+      },
+      {
+        "id": 10000078,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a7eb0a9a0805bdecfaccfd450ca61102.png",
+        "name": "艾尔海森",
+        "element": "Dendro",
+        "fetter": 2,
+        "level": 20,
+        "rarity": 5,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/18879316473d04cd094cf9bb23d0ae35.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/f7f3bc2088d83d7394c1c041073f9f41.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11302,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/048119e09a837be4c1a735fd046e3261.png",
+          "type": 1,
+          "rarity": 3,
+          "level": 1,
+          "affix_level": 5,
+          "name": "黎明神剑"
+        }
+      },
+      {
+        "id": 10000121,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/68c0b17a/cfec735e9e867016be94f500e9dae122.png",
+        "name": "爱诺",
+        "element": "Hydro",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/8c2703ada814233cd8bb76f5bfeda98e.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/68c0b1bb/99fb1fb7374069299b6a37848b6cca9e.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b1e284917f1ca8330ba929ef8f116aba.png",
+          "type": 11,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "训练大剑"
+        }
+      },
+      {
+        "id": 10000100,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/2c4b6f3e78da44cbe10f9cbc37a50fe1.png",
+        "name": "卡齐娜",
+        "element": "Geo",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/edfc5dbf65ee36356f9e2f64b5c171f6.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/06daf41434926868981682a72bf6e82f.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ca0ea04c05d8994f0b7e836012e38563.png",
+          "type": 13,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "新手长枪"
+        }
+      },
+      {
+        "id": 10000097,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/62ddf4187c2aea2dda21813b9d90f27f.png",
+        "name": "赛索斯",
+        "element": "Electro",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 2,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/1012f7f6fc03a5434b6a4d3223b28752.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/d36da4388a1637316f5897818d997214.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c75ade4a5acb5eb9aaefbed318bf75ff.png",
+          "type": 12,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "猎弓"
+        }
+      },
+      {
+        "id": 10000067,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/eaf61637b76953695940fe1ceedb18a0.png",
+        "name": "柯莱",
+        "element": "Dendro",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 6,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/6743b943e6a55d1f7a2327292a72bd36.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/54213a15451315dcfc47c040cb46abf4.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/c75ade4a5acb5eb9aaefbed318bf75ff.png",
+          "type": 12,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "猎弓"
+        }
+      },
+      {
+        "id": 10000056,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/3dc3a368e5c3be42a05afb7a9fdc9c41.png",
+        "name": "九条裟罗",
+        "element": "Electro",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/718dcc3cf7b98010060c5e04964f1ca6.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/29021fd200fb4074bcb857668b406307.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15403,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4a03625fdbc739dca379573871a4c2ca.png",
+          "type": 12,
+          "rarity": 4,
+          "level": 1,
+          "affix_level": 1,
+          "name": "祭礼弓"
+        }
+      },
+      {
+        "id": 10000050,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/57ede6ce84e7030b58af29520198119b.png",
+        "name": "托马",
+        "element": "Pyro",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 6,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/ae0fbc54c69f2fc97e8daaba430acffa.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/49841a48595e474cea1e360acd1d2638.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13303,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/badaa063427a6e3f39d9c031b3dddc24.png",
+          "type": 13,
+          "rarity": 3,
+          "level": 20,
+          "affix_level": 5,
+          "name": "黑缨枪"
+        }
+      },
+      {
+        "id": 10000039,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/699e3449/3de7b18fbecffbb57a73fe5032d24950.png",
+        "name": "迪奥娜",
+        "element": "Cryo",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 2,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/afb458c644664272704592885d789945.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/da4ae4bdb927ab20bf6905fdc61eef44.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15403,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/4a03625fdbc739dca379573871a4c2ca.png",
+          "type": 12,
+          "rarity": 4,
+          "level": 1,
+          "affix_level": 1,
+          "name": "祭礼弓"
+        }
+      },
+      {
+        "id": 10000031,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/207a0e35e0637a2bcb0a28fdfa61f7a4.png",
+        "name": "菲谢尔",
+        "element": "Electro",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 5,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/a07343a21aecb509e849a541c9d72901.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/2ad457efe47f31a54bd683286fd03144.png",
+        "weapon_type": 12,
+        "weapon": {
+          "id": 15401,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f0b8edcc330cd9de1dcf97eccb20cbaf.png",
+          "type": 12,
+          "rarity": 4,
+          "level": 1,
+          "affix_level": 1,
+          "name": "西风猎弓"
+        }
+      },
+      {
+        "id": 10000024,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/bc2903d1a46616c871d5108d033a463d.png",
+        "name": "北斗",
+        "element": "Electro",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 3,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/f6389d7277894b1cc1677402a3c64d90.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/d0d7146418af643964a4bc7f8cf9671f.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12305,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/7c806b2d328c89e3f7c6d70b01214af7.png",
+          "type": 11,
+          "rarity": 3,
+          "level": 20,
+          "affix_level": 5,
+          "name": "以理服人"
+        }
+      },
+      {
+        "id": 10000006,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/415cb4af1a402f97aebfcf8edc2ca235.png",
+        "name": "丽莎",
+        "element": "Electro",
+        "fetter": 1,
+        "level": 20,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/c57fd813ced89f1f01b5bc68ab78c53b.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/8120c3760d0ef7553024fc402d3d7a2f.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14403,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/807ae55311a3a8382194a656e214e7b1.png",
+          "type": 10,
+          "rarity": 4,
+          "level": 20,
+          "affix_level": 1,
+          "name": "祭礼残章"
+        }
+      },
+      {
+        "id": 10000083,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/5dad272ce992b32d3aa7a708869d1a4a.png",
+        "name": "琳妮特",
+        "element": "Anemo",
+        "fetter": 2,
+        "level": 3,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/9e7589a86900298f2f5fca7f7684af0a.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/40653a8bca56c6e205d2a01b2f6f9a00.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11407,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d6627a35dc10a7c7f9d5db832e271cce.png",
+          "type": 1,
+          "rarity": 4,
+          "level": 1,
+          "affix_level": 1,
+          "name": "铁蜂刺"
+        }
+      },
+      {
+        "id": 10000081,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/a34ebd3dba93cda6fba3cc97a995822e.png",
+        "name": "卡维",
+        "element": "Dendro",
+        "fetter": 1,
+        "level": 2,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/55160d4a2ef33ff9db735be32c64b158.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/92507726de789bf9b2bb18cb2d6e5e21.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b1e284917f1ca8330ba929ef8f116aba.png",
+          "type": 11,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "训练大剑"
+        }
+      },
+      {
+        "id": 10000108,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/eba829f8ca4b38367c4a2551d0e228ae.png",
+        "name": "蓝砚",
+        "element": "Anemo",
+        "fetter": 1,
+        "level": 1,
+        "rarity": 4,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/ec405681b4d5e20223a14638789fca44.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/11ee069d5e9ba93fb4325eabd5f16ef1.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/852d232e46ddaacdfcb86b3f53413405.png",
+          "type": 10,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "学徒笔记"
+        }
+      },
+      {
+        "id": 10000092,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/1238a7679cc90e138ec793b08aa853c7.png",
+        "name": "嘉明",
+        "element": "Pyro",
+        "fetter": 1,
+        "level": 1,
+        "rarity": 4,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/4b7edd0bc705272a16237e88048886f2.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/2e728e093d16c8b7f73c5e962011ac2f.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b1e284917f1ca8330ba929ef8f116aba.png",
+          "type": 11,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "训练大剑"
+        }
+      },
+      {
+        "id": 10000090,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/817f1d6da2a3ff6e6bfedeb39104ad71.png",
+        "name": "夏沃蕾",
+        "element": "Pyro",
+        "fetter": 1,
+        "level": 1,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/1c1c928d7a9757932c6bdbda89073f46.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/e0186b49ed0d791ee6b1dc0b125f6613.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ca0ea04c05d8994f0b7e836012e38563.png",
+          "type": 13,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "新手长枪"
+        }
+      },
+      {
+        "id": 10000088,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f4e68e94225fa95112ae03c0a6d10938.png",
+        "name": "夏洛蒂",
+        "element": "Cryo",
+        "fetter": 1,
+        "level": 1,
+        "rarity": 4,
+        "actived_constellation_num": 0,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/1d3fd45b4793e3ac84b71f5495249332.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/bee59717b62a91c6863009a394ca7e4c.png",
+        "weapon_type": 10,
+        "weapon": {
+          "id": 14101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/852d232e46ddaacdfcb86b3f53413405.png",
+          "type": 10,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "学徒笔记"
+        }
+      },
+      {
+        "id": 10000085,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/34ef1ba51a4893d9df4be717e56891ae.png",
+        "name": "菲米尼",
+        "element": "Cryo",
+        "fetter": 1,
+        "level": 1,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/463a5aac4d9004a95f60004a9add9539.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/12d2c7cb8629bea9b1c003026a07ea55.png",
+        "weapon_type": 11,
+        "weapon": {
+          "id": 12101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/b1e284917f1ca8330ba929ef8f116aba.png",
+          "type": 11,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "训练大剑"
+        }
+      },
+      {
+        "id": 10000080,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/f239b3032e85ebb64554e69a58eec91b.png",
+        "name": "米卡",
+        "element": "Cryo",
+        "fetter": 1,
+        "level": 1,
+        "rarity": 4,
+        "actived_constellation_num": 2,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/6ea984ba64a30d66f357f2c1855c1549.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/1e0d82ae5e6314615b3ead8709fff691.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ca0ea04c05d8994f0b7e836012e38563.png",
+          "type": 13,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "新手长枪"
+        }
+      },
+      {
+        "id": 10000077,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/d7ec9b285faccd804b54fa026dde96e8.png",
+        "name": "瑶瑶",
+        "element": "Dendro",
+        "fetter": 1,
+        "level": 1,
+        "rarity": 4,
+        "actived_constellation_num": 2,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/f94480f1f92837f11b9cae611e132e8d.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/819994f51843b91ff6ec7f71cfa76293.png",
+        "weapon_type": 13,
+        "weapon": {
+          "id": 13101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/ca0ea04c05d8994f0b7e836012e38563.png",
+          "type": 13,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "新手长枪"
+        }
+      },
+      {
+        "id": 10000061,
+        "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/49767b6d7070afddae937e417253bb3f.png",
+        "name": "绮良良",
+        "element": "Dendro",
+        "fetter": 1,
+        "level": 1,
+        "rarity": 4,
+        "actived_constellation_num": 1,
+        "image": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/image_7/f58159762fd8ed196d6ccbe7484aef45.png",
+        "is_chosen": false,
+        "side_icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f727/d3bc7e170b28a1645e222d9378bdbfc1.png",
+        "weapon_type": 1,
+        "weapon": {
+          "id": 11101,
+          "icon": "https://act-webstatic.mihoyo.com/hk4e/e20200928calculate/item_icon/67c7f6c8/0b590e80914fdb8e348323fff888be0c.png",
+          "type": 1,
+          "rarity": 1,
+          "level": 1,
+          "affix_level": 1,
+          "name": "无锋剑"
+        }
+      }
+    ]
+  }
+}
+```
+</details>
