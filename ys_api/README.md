@@ -4,6 +4,7 @@
 # 首页信息获取
 <details>
 <summary>CURL</summary>
+
 ```curl
 curl -X GET 'https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/index?avatar_list_type=1&server=cn_gf01&role_id=XXXX' -H 'User-Agent: Mozilla/5.0 (Linux; Android 12; 2211133C Build/V417IR; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/110.0.5481.154 Safari/537.36 miHoYoBBS/2.102.1' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Encoding: gzip, deflate' -H 'DS: 1772518716,165572,1fc88d5574fdd7838b4596864ca30cd9' -H 'x-rpc-app_version: 2.102.1' -H 'x-rpc-tool_verison: v6.4.0-gr-cn' -H 'x-rpc-device_id: 40818f2a-2395-38df-ab11-93371b77324e' -H 'x-rpc-device_name: Xiaomi%202211133C' -H 'x-rpc-page: v6.4.0-gr-cn_#/ys' -H 'x-rpc-device_fp: 38d816239aab3' -H 'x-rpc-sys_version: 12' -H 'x-rpc-client_type: 5' -H 'Origin: https://webstatic.mihoyo.com' -H 'X-Requested-With: com.mihoyo.hyperion' -H 'Sec-Fetch-Site: same-site' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Dest: empty' -H 'Referer: https://webstatic.mihoyo.com/' -H 'Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7' -H 'Cookie: XXXX'
 ```
