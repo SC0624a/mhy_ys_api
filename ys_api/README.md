@@ -1,5 +1,6 @@
 # 保留所有原CURL
 
+
 # 首页信息获取
 <details>
 <summary>CURL</summary>
@@ -9,7 +10,9 @@ curl -X GET 'https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/in
 </details>
 
 **请求方式：GET**
+
 链接：`https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/index`
+
 参数：
 | 字段 | 类型 | 内容 | 备注 |
 | ---- | ---- | ---- | ---- |
@@ -30,6 +33,7 @@ curl -X GET 'https://api-takumi-record.mihoyo.com/game_record/app/genshin/api/in
 
 **请求头**
 tips:这里只写必要请求头
+
 | 字段 | 类型 | 内容 | 是否必填 |
 | ---- | ---- | ---- | ---- |
 | User-Agent | str | miHoYoBBS/2.102.1 | 是 |
