@@ -7,3 +7,6 @@
 与此项目不同的是本项目只专攻原神
 
 具体文档：[**此处**](https://github.com/SC0624a/mhy_ys_api/tree/main/ys_api)
+
+# 其他
+本项目由我一人开发，更新可能有点慢，见谅~
